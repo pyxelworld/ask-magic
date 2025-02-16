@@ -99,8 +99,22 @@
             background-color: var(--input-background);
             color: var(--text-color);
             transition: background-color 0.3s ease;
-            min-width: 400px;
             height: 48px;
+            min-width: 300px;
+        }
+
+        @media (max-width: 767px) {
+            .input-group input {
+                min-width: unset;
+                width: calc(100% - 60px);
+                max-width: 100%;
+            }
+
+            .logo img {
+                width: 120px;
+                height: 120px;
+                object-fit: contain;
+            }
         }
 
         .input-group button {
@@ -193,7 +207,7 @@
         }
         @media (max-width: 767px) {
             body {
-                padding: 1rem 1rem 5rem;
+                padding: 2rem 1rem 5rem;
             }
 
             .container {
@@ -217,15 +231,15 @@
             }
 
             .logo {
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
                 display: flex;
                 justify-content: center;
                 width: 100%;
             }
 
             .logo img {
-                width: 100px;
-                height: 100px;
+                width: 120px;
+                height: 120px;
                 object-fit: contain;
             }
 
@@ -261,7 +275,6 @@
             <img src="../demo.png" alt="Magic App Demo">
         </div>
     </div>
-    <a href="https://pyxelworld.com" target="_blank" class="pyxel-link">Made by Pyxel</a>
 
     <script>
         const userInput = document.getElementById('userInput');
@@ -271,9 +284,7 @@
             sendButton.disabled = userInput.value.trim() === '';
         }
 
-        userInput.addEventListener('input', updateButtonState);
-
-        sendButton.addEventListener('click', function() {
+        function handleSendMessage() {
             const inputText = userInput.value.trim();
             
             if (inputText !== '') {
@@ -285,6 +296,15 @@
                     console.error('Error opening WhatsApp URL:', error);
                 }
             }
+        }
+
+        userInput.addEventListener('input', updateButtonState);
+        userInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && !sendButton.disabled) {
+                handleSendMessage();
+            }
         });
+
+        sendButton.addEventListener('click', handleSendMessage);
     </script>
 </body></html>
