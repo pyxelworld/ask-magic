@@ -1,8 +1,10 @@
 **Termos de Uso do Magic**
 
+
 **1. Introdução**
 
 O presente documento visa estabelecer os termos e condições de uso do Magic, um serviço fornecido pela Pyxel. Ao utilizar o Magic, o usuário ("Usuário") concorda integralmente com os termos aqui expostos.
+
 
 **2. Definições**
 
@@ -12,13 +14,16 @@ O presente documento visa estabelecer os termos e condições de uso do Magic, u
 
 **Pyxel**: Organização sem fins lucrativos responsável pelo desenvolvimento e manutenção do Magic.
 
+
 **3. Natureza da Pyxel**
 
 A Pyxel se constitui como uma organização sem fins lucrativos, dedicada ao avanço da inteligência artificial e ao fornecimento de serviços inovadores à comunidade.
 
+
 **4. Responsabilidade**
 
 A Pyxel não se responsabiliza por quaisquer danos ou prejuízos decorrentes do uso das informações fornecidas pelo Magic. O Usuário reconhece que as informações fornecidas pelo Magic são meramente informativas e não constituem aconselhamento profissional. O Usuário é o único responsável por verificar a exatidão e a relevância das informações fornecidas pelo Magic antes de tomar qualquer decisão.
+
 
 **5. Dados Coletados**
 
@@ -32,6 +37,7 @@ A Pyxel coleta os seguintes dados dos Usuários do Magic:
 
 **Memória Recente e Eventos**: Armazenamento temporário de interações recentes para memória do Magic e lista de eventos para otimizar a experiência do usuário.
 
+
 **6. Uso dos Dados**
 
 Os dados coletados são utilizados para os seguintes propósitos:
@@ -42,13 +48,16 @@ Os dados coletados são utilizados para os seguintes propósitos:
 
 **Análise Estatística**: Avaliar o uso do Magic para identificar tendências e oportunidades de melhoria.
 
+
 **7. Armazenamento e Segurança**
 
 Os dados coletados são armazenados em servidores localizados na capital de São Paulo, Brasil, garantindo a conformidade com a legislação brasileira de proteção de dados. A Pyxel emprega medidas de segurança para proteger os dados contra acesso não autorizado, uso indevido, alteração ou destruição.
 
+
 **8. Não Comercialização de Dados**
 
 A Pyxel reafirma seu compromisso de não comercializar, vender ou alugar os dados dos Usuários a terceiros sob nenhuma circunstância.
+
 
 **9. Direitos do Usuário**
 
@@ -56,9 +65,11 @@ O Usuário tem o direito de acessar, retificar, excluir ou portar seus dados pes
 
 Para isso, entre em contato com pyxel@pyxelworld.com
 
+
 **10. Alterações nos Termos de Uso**
 
 A Pyxel reserva-se o direito de modificar os presentes Termos de Uso a qualquer tempo, sendo o Usuário devidamente notificado sobre quaisquer alterações.
+
 
 **11. Disposições Finais**
 
