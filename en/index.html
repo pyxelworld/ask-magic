@@ -1,14 +1,14 @@
 <!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Magic is the AI of the future with paid features from other AIs for free, easily accessible and equally powerful through WhatsApp">
+    <meta name="description" content="Magic is a free powerful AI right within WhatsApp">
     <meta name="keywords" content="IA, AI, ChatGPT, Pyxel, Pyxel World, Magic, Magic IA, Magic AI, Meta AI, IA WhatsApp, AI WhatsApp, IA no WhatsApp, AI on WhatsApp, IA grátis, free AI, inteligência artificial, artificial intelligence, pergunte ao Magic, ask Magic, criar PDFs com IA, PDF IA, PDF AI, create PDFs with AI, imagens de IA, AI images, alternative to ChatGPT, Claude, DeepSeek, pesquisa com IA, AI search, google IA, google AI, gratuito, free">
-    <title>Magic - The AI of the Future</title>
+    <title>Magic - A powerful AI, right within WhatsApp</title>
     <link href="https://fonts.googleapis.com/css2?family=Garet:wght@400;700&amp;display=swap" rel="stylesheet">
     <style>
         :root {
-            --gradient-start: #313131;
-            --gradient-end: #141414;
+            --gradient-start: #0B8D98;
+            --gradient-end: #07404B;
             --text-color: #FFFFFF;
             --input-background: rgba(255, 255, 255, 0.1);
             --button-background: #FFFFFF;
@@ -24,15 +24,25 @@
 
         body {
             font-family: 'Garet', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: url('../background.png') no-repeat center center fixed;
+            background-size: cover;
             color: var(--text-color);
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            padding: 2rem;
+            padding: 0;
         }
 
+        .hero-section {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+        }
+        
         .container {
             max-width: 1200px;
             width: 100%;
@@ -205,9 +215,87 @@
             height: auto;
             display: block;
         }
+        .features-section {
+            background-color: #041e23;
+            width: 100%;
+            padding: 4rem 2rem;
+            color: #FFFFFF;
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .features-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+        }
+        
+        @media (min-width: 640px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .feature-card {
+            background-color: #072f36;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .feature-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+        
+        .feature-content {
+            padding: 1.5rem;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--gradient-start);
+        }
+        
+        .feature-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #e0e0e0;
+        }
+
         @media (max-width: 767px) {
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+            
             body {
-                padding: 2rem 1rem 5rem;
+                padding: 0 0 5rem;
             }
 
             .container {
@@ -256,23 +344,124 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <div class="logo">
-                <img src="../logo.PNG" alt="Magic Logo">
+    <div class="hero-section">
+        <div class="container">
+            <div class="content">
+                <div class="logo">
+                    <img src="../logo.PNG" alt="Magic Logo">
+                </div>
+                <h1>Ask Magic</h1>
+                <p>A powerful AI right within your WhatsApp. Magic can recieve any attachment, search the internet, transcribe audios, generate images, create reminders and more. Ask Magic anything and become one of the thousand users of Magic typing below. Scroll down to learn more.</p>
+                <div class="input-group">
+                    <input type="text" id="userInput" placeholder="Type your message...">
+                    <button id="sendButton" disabled><span class="arrow-icon">➔</span></button>
+                </div>
+                <div class="links">
+                    <a href="https://magic.pyxelworld.com" target="_blank">Access on website</a>
+                </div>
             </div>
-            <h1>Ask Magic</h1>
-            <p>The AI of the future. Search the internet, send audio, images, or any attachments, receive reminders, or create events for daily tasks and much more for free, right within WhatsApp.</p>
-            <div class="input-group">
-                <input type="text" id="userInput" placeholder="Type your message...">
-                <button id="sendButton" disabled><span class="arrow-icon">➔</span></button>
-            </div>
-            <div class="links">
-                <a href="https://magic.pyxelworld.com" target="_blank">Access on website</a>
+            <div class="app-preview">
+                <img src="../demo.png" alt="Magic App Demo">
             </div>
         </div>
-        <div class="app-preview">
-            <img src="../demo.png" alt="Magic App Demo">
+    </div>
+    
+    <div class="features-section">
+        <div class="features-container">
+            <h2 class="features-title">What can you do with Magic?</h2>
+            
+            <div class="features-grid">
+                
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <img src="../audios.png" alt="Send audio" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Send audios</h3>
+                        <p class="feature-description">When you're in a hurry, there's no need to type. Record an audio and Magic will listen and respond to it.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <img src="../arquivos.png" alt="Send image, video or other files" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Send image, video or other files</h3>
+                        <p class="feature-description">You can send images, videos, or other types of attached documents to Magic for analysis and get responses related to them.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="feature-card">
+                    <img src="../internet.png" alt="Search the internet" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Search the internet</h3>
+                        <p class="feature-description">Magic can search the internet to provide answers about current events or to give better responses.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4.1 -->
+                <div class="feature-card">
+                    <img src="../deepsearch.png" alt="Deep search" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Deep search</h3>
+                        <p class="feature-description">If a regular search isn't enough and you want Magic to research extensively to answer your question, include /deepsearch in your message.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="feature-card">
+                    <img src="../image.png" alt="Generate images" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Generate images</h3>
+                        <p class="feature-description">Generate super-realistic images in various formats just by asking Magic!</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="feature-card">
+                    <img src="../transcrever.png" alt="Transcribe audio" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Transcribe audio</h3>
+                        <p class="feature-description">When you're busy and someone sends you an audio message, forward it to Magic and it will transcribe the audio for you.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 10 -->
+                <div class="feature-card">
+                    <img src="../pdf.png" alt="Create PDFs" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Create PDFs</h3>
+                        <p class="feature-description">Ask Magic to create a document or PDF for you. It will open in a markdown editor where you can make changes or collaborate with the AI on the document, and finally export it as .md or .pdf</p>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="feature-card">
+                    <img src="../eventos.png" alt="Create events" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Create events</h3>
+                        <p class="feature-description">Ask Magic to send you the temperature every morning or remind you to do a task, and it will send you a message at the time of the event.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 8 -->
+                <div class="feature-card">
+                    <img src="../think.png" alt="Answer difficult questions" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Answer difficult questions</h3>
+                        <p class="feature-description">If you ask Magic about complex topics like math calculations, you can include /think in your message so Magic can work through a line of reasoning before answering.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 9 -->
+                <div class="feature-card">
+                    <img src="../sticker.png" alt="Create stickers" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Create stickers</h3>
+                        <p class="feature-description">Send images along with /sticker to transform them into 1:1 stickers.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
