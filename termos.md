@@ -1,4 +1,4 @@
-**Termos de Uso do Magic**
+# Termos de Uso do Magic no WhatsApp
 
 
 **1. Introdução**
