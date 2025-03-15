@@ -78,3 +78,5 @@ Os presentes Termos de Uso são regidos e interpretados de acordo com as leis da
 Em caso de dúvidas ou esclarecimentos, o Usuário poderá entrar em contato com a Pyxel através dos canais de comunicação disponibilizados.
 
 É importante que o Usuário leia atentamente os presentes Termos de Uso antes de utilizar o Magic. Ao continuar a utilizar o serviço, o Usuário manifesta sua concordância integral com os termos aqui expostos.
+
+*Atualizado em 14/03/2025 10:41 PM*
