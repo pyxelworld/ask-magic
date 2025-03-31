@@ -30,7 +30,7 @@ A Pyxel coleta os seguintes dados dos Usuários do Magic:
 
 **Acessos**: Registros de data de acesso para fins estatísticos e de melhoria do serviço.
 
-**Logs Eventos**: Armazenamento temporário de interações recentes para correções de possíveis bugs e lista de eventos para otimizar a experiência do usuário.
+**Logs e Eventos/Notas**: Armazenamento temporário de interações recentes para correções de possíveis bugs e lista de evento/notass para otimizar a experiência do usuário.
 
 A Pyxel poderá acessar esses dados para fins de identificação de bugs e melhoria contínua do serviço, sempre respeitando a privacidade e a segurança dos Usuários.
 
