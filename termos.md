@@ -30,7 +30,7 @@ A Pyxel coleta os seguintes dados dos Usuários do Magic:
 
 **Acessos**: Registros de data de acesso para fins estatísticos e de melhoria do serviço.
 
-**Memória Recente e Eventos**: Armazenamento temporário de interações recentes para memória do Magic e lista de eventos para otimizar a experiência do usuário.
+**Logs Eventos**: Armazenamento temporário de interações recentes para correções de possíveis bugs e lista de eventos para otimizar a experiência do usuário.
 
 A Pyxel poderá acessar esses dados para fins de identificação de bugs e melhoria contínua do serviço, sempre respeitando a privacidade e a segurança dos Usuários.
 
@@ -70,4 +70,4 @@ Em caso de dúvidas ou esclarecimentos, o Usuário poderá entrar em contato com
 
 É importante que o Usuário leia atentamente os presentes Termos de Uso antes de utilizar o Magic. Ao continuar a utilizar o serviço, o Usuário manifesta sua concordância integral com os termos aqui expostos.
 
-*Atualizado em 15/03/2025 9:12 AM*
+*Atualizado em 31/03/2025 3:50 PM*
