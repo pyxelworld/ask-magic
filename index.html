@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O Magic IA é a IA gratuita feita pra você">
-    <meta name="keywords" content="IA, AI, ChatGPT, Pyxel, Pyxel World, Magic, Magic IA, Magic AI, Meta AI, IA WhatsApp, AI WhatsApp, IA no WhatsApp, AI on WhatsApp, IA grátis, free AI, inteligência artificial, artificial intelligence, pergunte ao Magic, ask Magic, criar PDFs com IA, PDF IA, PDF AI, create PDFs with AI, imagens de IA, AI images, alternative to ChatGPT, Claude, DeepSeek, pesquisa com IA, AI search, google IA, google AI, gratuito, free">
-    <title>Magic IA - IA feita pra você</title>
-    <link href="https://fonts.googleapis.com/css2?family=Garet:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Magic IA é a inteligência artificial gratuita e poderosa, feita para você.">
+    <meta name="keywords" content="IA, AI, Inteligência Artificial, Magic IA, Magic AI, Gratuito, Gerador de Imagens, Assistente Pessoal">
+    <title>Magic IA - A IA feita para você</title>
+    <link href="https://fonts.googleapis.comcom/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --gradient-start: #0B8D98;
-            --gradient-end: #07404B;
-            --text-color: #FFFFFF;
-            --input-background: rgba(255, 255, 255, 0.1);
-            --button-background: #FFFFFF;
-            --button-color: #000000;
-            --disabled-color: #666666;
+            --color-primary: #03704c;
+            --color-secondary: #06424c;
+            --color-text: #e0f2f1;
+            --color-text-dark: #032a30;
+            --color-card-border: rgba(2, 112, 75, 0.4);
+            --animation-duration: 0.7s;
+            --animation-timing: cubic-bezier(0.8, 0.03, 0.2, 1);
         }
 
         * {
@@ -25,543 +25,335 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Garet', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-            background: url('background.png') no-repeat center center fixed;
-            background-size: cover;
-            color: var(--text-color);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .hero-section {
-            background-color: rgba(0, 0, 0, 0.5);
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 2rem;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #042930;
+            background-image: radial-gradient(circle at 10% 20%, var(--color-primary) 0%, #042930 50%, #042930 100%);
+            color: var(--color-text);
+            overflow-x: hidden;
         }
-        
+
         .container {
             max-width: 1200px;
-            width: 100%;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2rem;
-            padding-top: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                flex-direction: row;
-                align-items: center;
-                gap: 4rem;
-                padding-top: 0;
-            }
-        }
-        
-        .features-section {
-            background-color: #041e23;
-            width: 100%;
-            padding: 4rem 2rem;
-            color: #FFFFFF;
-        }
-        
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .features-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: #FFFFFF;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 2rem;
-        }
-        
-        @media (min-width: 640px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .features-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        .feature-card {
-            background-color: #072f36;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-        }
-        
-        .feature-image {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-        }
-        
-        .feature-content {
-            padding: 1.5rem;
-        }
-        
-        .feature-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--gradient-start);
-        }
-        
-        .feature-description {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: #e0e0e0;
-        }
-
-        .content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
             justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+            padding: 4rem 1rem;
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             margin-bottom: 2rem;
         }
 
-        .logo img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-        }
-
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-
-        .input-group {
-            display: flex;
+            background: linear-gradient(45deg, #ffffff, #b2ebd8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            max-width: 700px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            color: rgba(224, 242, 241, 0.85);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffffff, #b2ebd8);
+            color: var(--color-text-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(2, 112, 75, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(2, 112, 75, 0.4);
+        }
+
+        /* Cover Flow Carousel Section */
+        .features {
+            padding: 5rem 0;
+            position: relative;
         }
         
-        /* START OF NEW STYLES */
-        .action-buttons {
+        .features-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .carousel-container {
+            position: relative;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 3000px;
+            transform-style: preserve-3d;
+        }
+        
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+
+        .card-wrapper {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 340px;
+            height: 440px;
+            transform-style: preserve-3d;
+            transition: transform var(--animation-duration) var(--animation-timing),
+                        opacity calc(var(--animation-duration) / 2) ease;
+            cursor: pointer;
+        }
+
+        .card {
+            background: var(--color-secondary);
+            border: 1px solid var(--color-card-border);
+            border-radius: 1rem;
+            width: 339px;
+            height: 108%;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            width: 100%;
+            transition: box-shadow var(--animation-duration) var(--animation-timing);
         }
-
-        .web-button {
-            display: inline-block;
-            text-decoration: none;
-            background-color: transparent;
-            color: var(--text-color);
-            border: 2px solid var(--text-color);
-            padding: 0.8rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
+        
+        .card-image {
+            width: 339px;
+            height: 250px;
+            object-fit: cover;
+            flex-shrink: 0;
         }
-
-        .web-button:hover {
-            background-color: var(--text-color);
-            color: var(--button-color);
-            transform: translateY(-2px);
-        }
-        /* END OF NEW STYLES */
-
-        .input-group input {
+        
+        .card-content {
+            padding: 1.5rem;
             flex-grow: 1;
-            padding: 0.8rem 1.2rem;
-            border: none;
-            border-radius: 9999px 0 0 9999px;
-            font-size: 1rem;
-            background-color: var(--input-background);
-            color: var(--text-color);
-            transition: background-color 0.3s ease;
-            height: 48px;
-            min-width: 300px;
         }
 
-        @media (max-width: 767px) {
-            .input-group input {
-                min-width: unset;
-                width: calc(100% - 60px);
-                max-width: 100%;
-            }
+        .card-title { font-size: 1.5rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem; }
+        .card-description { font-size: 1rem; line-height: 1.6; color: var(--color-text); }
 
-            .logo img {
-                width: 120px;
-                height: 120px;
-                object-fit: contain;
-            }
+        /* Navigation */
+        .carousel-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            gap: 1rem;
         }
 
-        .input-group button {
-            background-color: var(--button-background);
-            color: var(--button-color);
-            border: none;
-            padding: 0.8rem 1.2rem;
-            border-radius: 0 9999px 9999px 0;
+        .nav-arrow {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             cursor: pointer;
-            font-weight: bold;
-            transition: opacity 0.3s ease, transform 0.1s ease;
+            transition: background-color 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 60px;
-            height: 48px;
+            font-size: 1.5rem;
         }
 
-        .input-group input:hover, .input-group input:focus {
-            background-color: rgba(255, 255, 255, 0.2);
-            outline: none;
-        }
+        .nav-arrow:hover { background-color: rgba(255, 255, 255, 0.2); }
 
-        .input-group button:hover:not(:disabled) {
-            opacity: 0.8;
-            transform: translateY(-2px);
-        }
-
-        .input-group button:active:not(:disabled) {
-            transform: translateY(0);
-        }
-
-        .input-group button:disabled {
-            cursor: not-allowed;
-            color: var(--disabled-color);
-        }
-
-        .arrow-icon {
-            font-size: 1.4rem;
-        }
-
-        .links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: opacity 0.3s ease;
-        }
-
-        .links a:hover {
-            opacity: 0.7;
-        }
-
-        @media (max-width: 767px) {
-            .links a {
-                display: inline-block;
-                background-color: var(--button-background);
-                color: var(--button-color);
-                padding: 0.8rem 1.5rem;
-                border-radius: 9999px;
-                font-weight: 600;
-                transition: transform 0.3s ease, opacity 0.3s ease;
-            }
-
-            .links a:hover {
-                opacity: 0.8;
-                transform: translateY(-2px);
-            }
-
-            .links a:active {
-                transform: translateY(0);
-            }
-            
-            /* START OF NEW STYLES (MOBILE) */
-            .action-buttons {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                padding: 1rem;
-                background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-                box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
-                z-index: 1000;
-                align-items: center;
-            }
-            
-            .input-group {
-                width: 100%;
-                margin: 0;
-                position: relative;
-            }
-
-            .web-button {
-                margin-top: 1rem;
-                width: 100%;
-                max-width: 400px;
-            }
-            /* END OF NEW STYLES (MOBILE) */
-        }
-        .app-preview {
-            width: 100%;
-            max-width: 280px;
-            border-radius: 2rem;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .app-preview:hover {
-            transform: translateY(-10px);
-        }
-
-        .app-preview img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .pyxel-link {
-            position: fixed;
-            bottom: 1rem;
-            right: 1rem;
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0.5rem 1rem;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 9999px;
-            transition: all 0.3s ease;
-            z-index: 1001;
-        }
-
-        @media (max-width: 767px) {
-            .pyxel-link {
-                bottom: 12.5rem; /* Adjusted to make space for the new button */
-            }
-        }
-
-        .pyxel-link:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 767px) {
-            .hero-section {
-                padding: 2rem 1rem;
-            }
-            
-            body {
-                padding: 0 0 11rem; /* Adjusted to make space for the new button */
-            }
-
-            .container {
-                gap: 1.5rem;
-            }
-
-            .app-preview {
-                display: none;
-            }
-            
-            .features-section {
-                padding: 2rem 1rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .logo {
-                margin-bottom: 1.5rem;
-                display: flex;
-                justify-content: center;
-                width: 100%;
-            }
-
-            .logo img {
-                width: 120px;
-                height: 120px;
-                object-fit: contain;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-                text-align: center;
-            }
-
-            p {
-                font-size: 1.2rem;
-                margin-bottom: 1.5rem;
-            }
-        }
+        /* Footer */
+        .footer { text-align: center; padding: 3rem 1rem; border-top: 1px solid var(--color-card-border); }
+        .footer a { color: var(--color-text); text-decoration: none; transition: color 0.3s ease; }
+        .footer a:hover { color: #fff; text-decoration: underline; }
     </style>
 </head>
 <body>
-    <div class="hero-section">
-        <div class="container">
-            <div class="content">
-                <div class="logo">
-                    <img src="logo.PNG" alt="Magic IA Logo">
-                </div>
-                <h1>Pergunte ao Magic IA</h1>
-                <p>Uma IA gratuita feita pra você. O Magic IA recebe qualquer anexo, pesquisa na internet, gera imagens com o Nano Banana, cria lembretes e muito mais. Peça qualquer coisa ao Magic IA, e vire um dos mais de 2K de usuários Magic IA digitando abaixo. Leia mais abaixo para saber mais.</p>
-                
-                <!-- START OF MODIFIED HTML SECTION -->
-                <div class="action-buttons">
-                    <a href="https://web.magicia.com.br" target="_blank" class="web-button">Usar no site</a>
-                    <a href="https://wa.me/551127375623" target="_blank" class="web-button">Mande uma mensagem no WhatsApp</a>
-                    <a href="https://web.whatsapp.com/send/?phone=551127375623&type=phone_number&app_absent=0" target="_blank" class="web-button">Usar no WhatsApp Web</a>
-                </div>
-                <!-- END OF MODIFIED HTML SECTION -->
 
-            </div>
-            <div class="app-preview">
-                <img src="demo.png" alt="Magic IA App Demo">
-            </div>
-        </div>
-    </div>
-    
-    <div class="features-section">
-        <div class="features-container">
-            <h2 class="features-title">O que você pode fazer com o Magic IA no WhatsApp?</h2>
-            
-            <div class="features-grid">
-                
-                <!-- Card 2 -->
-                <div class="feature-card">
-                    <img src="audios.png" alt="Envie áudios" class="feature-image">
-                    <div class="feature-content">
-                        <h3 class="feature-title">Envie áudios</h3>
-                        <p class="feature-description">Na correria, não é preciso digitar. Grave um áudio e o Magic IA irá ouvi-lo e respondê-lo.</p>
-                    </div>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="feature-card">
-                    <img src="arquivos.png" alt="Envie arquivos de imagem, vídeo ou mais" class="feature-image">
-                    <div class="feature-content">
-                        <h3 class="feature-title">Envie arquivos de imagem, vídeo ou mais</h3>
-                        <p class="feature-description">Você pode enviar imagens, vídeos ou outros tipos de documentos anexados para o Magic IA para com que ele analise e responda algo relacionado a eles.</p>
-                    </div>
-                </div>
-                
-                <!-- Card 4 -->
-                <div class="feature-card">
-                    <img src="internet.png" alt="Pesquise na internet" class="feature-image">
-                    <div class="feature-content">
-                        <h3 class="feature-title">Pesquise na internet</h3>
-                        <p class="feature-description">O Magic IA consegue pesquisar na internet para dar respostas sobre ocorridos atuais ou fazer uma resposta melhor.</p>
-                    </div>
-                </div>
-                
-                <!-- Card 5 -->
-                <div class="feature-card">
-                    <img src="image.png" alt="Gere imagens" class="feature-image">
-                    <div class="feature-content">
-                        <h3 class="feature-title">Gere imagens</h3>
-                        <p class="feature-description">Gere imagens super-realistas em vários formatos só pedindo ao Magic IA!</p>
-                    </div>
-                </div>
-                
-                <!-- Card 10 -->
-                <div class="feature-card">
-                    <img src="pdf.png" alt="Crie PDFs" class="feature-image">
-                    <div class="feature-content">
-                        <h3 class="feature-title">Crie PDFs</h3>
-                        <p class="feature-description">Peça para o Magic IA criar um documento ou PDF para você. O mesmo abrirá em um editor markdown para fazer quaisquer mudançar ou colaborar com a IA no documento, para no final, exportar como .md ou .pdf</p>
-                    </div>
-                </div>
-    
-                <!-- Card 7 -->
-                <div class="feature-card">
-                    <img src="eventos.png" alt="Crie eventos" class="feature-image">
-                    <div class="feature-content">
-                        <h3 class="feature-title">Crie eventos</h3>
-                        <p class="feature-description">Peça ao Magic IA para te enviar a temperatura toda manhã ou te lembrar de fazer uma tarefa e ele irá te mandar uma mensagem na hora do evento.</p>
-                    </div>
-                </div>
-                
-                <!-- Card 8 -->
-                <div class="feature-card">
-                    <img src="think.png" alt="Responda perguntas difíceis" class="feature-image">
-                    <div class="feature-content">
-                        <h3 class="feature-title">Responda perguntas difíceis</h3>
-                        <p class="feature-description">Caso você pergunte ao Magic IA, por exemplos, cálculos de mátematica, você pode colocar /think em sua mensagem para que o Magic IA tenha uma linha de raciocínio antes de responder.</p>
-                    </div>
-                </div>
-                
-                <!-- Card 9 -->
-                <div class="feature-card">
-                    <img src="sticker.png" alt="Crie figurinhas" class="feature-image">
-                    <div class="feature-content">
-                        <h3 class="feature-title">Crie figurinhas</h3>
-                        <p class="feature-description">Envie imagens, e junto delas /sticker para transformar imagens em figurinhas 1:1.</p>
-                    </div>
+    <main>
+        <section class="hero">
+            <img src="logo.png" alt="Magic IA Logo" class="logo">
+            <h1>A Inteligência Artificial feita para você</h1>
+            <p>O Magic IA é uma IA gratuita com funções incríveis como respostas humanas que burlam detectores de IA, geração de imagens com Nano Banana, geração de vídeos com o Veo 3.1 e mais. Se junte aos mais de 2K de usuários!</p>
+            <a href="https://web.magicia.com.br/" class="cta-button">Pergunta ao Magic agora</a>
+        </section>
+
+        <section id="features" class="features">
+            <h2 class="features-title">Diferenciais do Magic IA</h2>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <!-- Cards are dynamically inserted here -->
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <p><a style="color: white" href="https://magic.pyxelworld.com/">O que aconteceu com o Magic para Poe?</a></p>
-    
-    <a href="https://pyxelworld.com" target="_blank" class="pyxel-link">Feito pela Pyxel</a>
-    
+            <br>
+            <div class="carousel-nav">
+                <button id="prevBtn" class="nav-arrow"><i class="fas fa-chevron-left"></i></button>
+                <button id="nextBtn" class="nav-arrow"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p><a href="https://pyxelworld.com" target="_blank">Feito pela Pyxel</a></p>
+    </footer>
+
     <script>
-        const userInput = document.getElementById('userInput');
-        const sendButton = document.getElementById('sendButton');
-    
-        function updateButtonState() {
-            sendButton.disabled = userInput.value.trim() === '';
-        }
-    
-        function handleSendMessage() {
-            const inputText = userInput.value.trim();
-            
-            if (inputText !== '') {
-                try {
-                    const encodedInput = encodeURIComponent(inputText);
-                    const whatsappUrl = `https://wa.me/551127375623?text=${encodedInput}`;
-                    window.open(whatsappUrl, '_blank');
-                } catch (error) {
-                    console.error('Error opening WhatsApp URL:', error);
-                }
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.querySelector('.carousel');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const cardData = [
+                { title: 'Respostas humanas', description: 'Com o Magic Natural Writing, as respostas do Magic IA ficam humanas e não são detectadas como IA.', image: 'mnw.png' },
+                { title: 'Gere imagens com o Nano Banana', description: 'O mais novo Nano Banana do Google está disponível no Magic IA para você gerar as melhores imagens do mundo. Disponível no Magic+', image: 'nanobanana.png' },
+                { title: 'Gere vídeos com o Veo 3.1', description: 'Com o Veo 3.1, você pode gerar vídeos com áudio super realistas. Disponível no Magic+', image: 'veo.png' },
+                { title: 'Raciocine', description: 'Faça o Magic IA ter uma linha de raciocínio antes de responder, gerando em resultados mais inteligentes e elaborados.', image: 'raciocinar.png' },
+                { title: 'Pesquise na internet', description: 'Com o Magic Query, o Magic IA pesquisa no Google usando o Modo IA para obter os melhores resultados para você.', image: 'query.png' },
+                { title: 'Use-o como seu mecanismo de busca', description: 'Você pode colocar o Magic IA como seu mecanismo de busca padrão em seu navegador para pesquisas na internet usando o Query.', image: 'searchengine.png' },
+                { title: 'Crie lembretes e notas', description: 'Crie eventos que se repetem para fazer o Magic IA fazer algo em certa ocasião e crie notas para fazer ele lembrar de informações específicas.', image: 'eventos.png' },
+                { title: 'Memória entre chats', description: 'Com o Magic Across Chats Memory, o Magic IA consegue lembrar de informações de outras conversas com ele através chats.', image: 'acm.png' },
+                { title: 'Importe do ChatGPT', description: 'Não quer perder suas coisas? Importe suas conversas de texto com o ChatGPT para o Magic IA!', image: 'chatgpt.png' },
+                { title: 'Crie documentos', description: 'Com o Magic Canvas, você tem um editor de documentos e código HTML para editar junto com o Magic IA e depois exportá-lo em PDF ou HTML.', image: 'canvas.png' },
+                { title: 'Crie seu foguinho', description: 'Fale com o Magic IA todos os dias para criar um foguinho e ganhar Créditos Magic+', image: 'foguinho.png' },
+                { title: 'Magic API', description: 'Você pode usar o modelo do Magic IA em seu próprio app usando a Magic API.', image: 'api.png' },
+            ];
+
+            let currentIndex = 0;
+            let cards = [];
+            let autoSpinInterval;
+            let isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
+            function setupCarousel() {
+                carousel.innerHTML = '';
+                cards = [];
+                cardData.forEach((data, index) => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'card-wrapper';
+                    wrapper.dataset.index = index;
+
+                    wrapper.innerHTML = `
+                        <div class="card">
+                            <img src="${data.image}" alt="${data.title}" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">${data.title}</h3>
+                                <p class="card-description">${data.description}</p>
+                            </div>
+                        </div>
+                    `;
+                    carousel.appendChild(wrapper);
+                    cards.push(wrapper);
+
+                    wrapper.addEventListener('click', () => {
+                        if (index !== currentIndex) {
+                            goToCard(index);
+                            resetAutoSpin();
+                        }
+                    });
+                });
+                updateCarousel();
             }
-        }
-    
-        userInput.addEventListener('input', updateButtonState);
-        userInput.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter' && !sendButton.disabled) {
-                handleSendMessage();
+
+            function updateCarousel() {
+                const numCards = cards.length;
+                const visibleSideCards = isDesktop ? 2 : 1;
+
+                cards.forEach((card, index) => {
+                    const cardInner = card.querySelector('.card');
+                    let diff = index - currentIndex;
+
+                    // Handle circular logic for smooth looping
+                    if (Math.abs(diff) > numCards / 2) {
+                        diff = diff > 0 ? diff - numCards : diff + numCards;
+                    }
+                    
+                    const absDiff = Math.abs(diff);
+                    
+                    if (absDiff <= visibleSideCards) {
+                        const isCenter = diff === 0;
+                        const sign = Math.sign(diff);
+
+                        const x = isCenter ? 0 : (isDesktop ? (absDiff === 1 ? 280 : 500) : 250) * sign;
+                        const z = isCenter ? 0 : (isDesktop ? (absDiff === 1 ? -250 : -450) : -300);
+                        const yRot = isCenter ? 0 : (isDesktop ? (absDiff === 1 ? -50 : -55) : -55) * sign;
+                        const scale = isCenter ? 1 : (isDesktop ? (absDiff === 1 ? 0.9 : 0.8) : 0.85);
+                        const opacity = isCenter ? 1 : (isDesktop ? (absDiff === 1 ? 0.8 : 0.5) : 0.6);
+                        
+                        card.style.transform = `translateX(calc(-50% + ${x}px)) translateY(-50%) translateZ(${z}px) rotateY(${yRot}deg) scale(${scale})`;
+                        card.style.opacity = opacity;
+                        card.style.zIndex = numCards - absDiff;
+                        cardInner.style.boxShadow = isCenter ? '0 10px 30px rgba(0,0,0,0.3)' : '0 5px 15px rgba(0,0,0,0.2)';
+
+                    } else {
+                        // Hide cards that are out of view
+                        const sign = Math.sign(diff);
+                        card.style.transform = `translateX(calc(-50% + ${sign * 600}px)) translateY(-50%) translateZ(-800px) rotateY(${sign * -60}deg) scale(0.7)`;
+                        card.style.opacity = '0';
+                        card.style.zIndex = 0;
+                    }
+                });
             }
+
+            function goToCard(index) {
+                currentIndex = (index + cards.length) % cards.length;
+                updateCarousel();
+            }
+
+            function nextCard() { goToCard(currentIndex + 1); }
+            function prevCard() { goToCard(currentIndex - 1); }
+
+            function startAutoSpin() {
+                stopAutoSpin();
+                autoSpinInterval = setInterval(nextCard, 5000);
+            }
+
+            function stopAutoSpin() { clearInterval(autoSpinInterval); }
+            function resetAutoSpin() { stopAutoSpin(); startAutoSpin(); }
+
+            nextBtn.addEventListener('click', () => { nextCard(); resetAutoSpin(); });
+            prevBtn.addEventListener('click', () => { prevCard(); resetAutoSpin(); });
+
+            carousel.addEventListener('mouseenter', stopAutoSpin);
+            carousel.addEventListener('mouseleave', startAutoSpin);
+
+            window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
+                isDesktop = e.matches;
+                updateCarousel();
+            });
+
+            // Initial setup
+            setupCarousel();
+            startAutoSpin();
         });
-    
-        sendButton.addEventListener('click', handleSendMessage);
     </script>
 </body>
 </html>
