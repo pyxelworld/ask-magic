@@ -38,7 +38,7 @@ A Pyxel coleta os seguintes dados dos Usuários do Magic IA para o funcionamento
 
 **Senha**: Utilizada para acesso seguro à conta do usuário no site do Magic IA.
 
-A Pyxel poderá acessar esses dados para fins de identificação de bugs e melhoria contínuosa do serviço, sempre respeitando a privacidade e a segurança dos Usuários.
+A Pyxel poderá acessar esses dados e a sua conta para fins de identificação de bugs, melhoria contínuosa do serviço e estatísticas.
 
 **6. Uso dos Dados**
 
